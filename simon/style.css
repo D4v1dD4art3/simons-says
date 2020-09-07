@@ -1,18 +1,20 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
-.row {
-  /* border: 1px solid rgb(0, 255, 13); */
-}
-.col {
-  /* border: 1px solid rgb(0, 174, 255); */
+/* html {
+  scroll-behavior: smooth;
+} */
+body {
+  position: relative;
 }
 .circulo-container {
-    /* border: 1px solid red; */
     margin:0;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.main-info h1{
+  color: rgb(21, 158, 182);
 }
 .header {
   background: rgb(37, 54, 73);
@@ -110,5 +112,11 @@
   }
   .footer h5{
     color: rgb(177, 20, 177);
+  }
+
+  @keyframes mover{
+    0%{
+      transform: translate(100%);
+    }
   }
   
