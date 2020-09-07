@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-dark" data-spy="scroll" data-target="#navbar" data-offset="57">
+    
+    <header  class="header">
+        <nav  id="navbar" class="navbar navbar-expand-lg space-between navbar-dark sticky-top">
+            <a class="navbar-brand w-0" href="#">
+                <img class=" m-0 w-50 h-20" src="./assets/img/logo_dark.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">portafolio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">switch bg</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+
+    <!-- Main -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-lg-4 justify-content-sm-center offset-lg-1 d-flex align-items-center">
+          <section class="circulo-container">
+              <div class="circulo"> 
+                 <div id="violeta" class="color violeta right" data-color="violeta"></div>
+                 <div id="naranja" class="color naranja left" data-color="naranja"></div>
+                 <div id="celeste" class="color celeste right" data-color="celeste"></div>
+                 <div id="verde" class="color verde left" data-color="verde"></div>
+                 <button id="btnEmpezar" class="botton btn btn-outline-dark btn-lg" onclick="empezarJuego()">empezar</button>
+              </div>
+          </section>
+        </div>
+
+        <div class="info col-sm-12 col-lg-5 d-flex offset-lg-1 align-items-center mt-5">
+          <div class="card bg-dark m-0" style="max-width: 100%;">
+            <div class="card-header">Simons-says</div>
+            <div class="card-body">
+              <h5 class="card-title">Un proyecto creado con vanilla <span>Javascript</span></h5>
+              <p class="card-text"> <span>Simons-says</span> es un juego en donde el usuario tiene que recordar una secuencia de colores, donde si logra recordar la secuencia y completar los 10 nivel <span>ganara</span> el juego sino <span>perdera</span> y tendra que empezar de nuevo.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+   </div>
+
+    <div class="container mt-5">
+      <div class="row row-cols-1 row-cols-md-2">
+        <div class="col mb-4">
+          <div class="info card bg-dark">
+            <img src="./assets/img/class.png" class="card-img-top" alt="Class">
+            <div class="card-body">
+              <h5 class="card-title">Implementacion de <span>Class</span></h5>
+              <p class="card-text">La practica de Clases es una muy buena base para el desarrollo de la logica dentro de una website o app, otra experiencia que obtuve durante la creacion de este proyecto fue el contexto de <span>this</span> y sus diferentes facetas dentro de la logica de computo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col mb-4">
+          <div class="info card bg-dark">
+            <img src="./assets/img/secuencia.png" class="card-img-top" alt="Array">
+            <div class="card-body">
+              <h5 class="card-title">Metodos de los <span>Arrays</span></h5>
+              <p class="card-text">Los diferentes metodos y propiedades de los Arrays como <span>Array.prototype.fill()</span> o instaciar un <span>new Array</span> me ayudo mucho en la creacion de esta logica, y tambien el metodo <span>.Math()</span> es muy util para generar numeros Random</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col mb-4">
+          <div class="info card bg-dark">
+            <img src="./assets/img/switch.png" class="card-img-top" alt="switch">
+            <div class="card-body">
+              <h5 class="card-title">Condicionales como <span>switch</span></h5>
+              <p class="card-text">En este punto de la logica tuve que crear un <span>for loop</span> que me recorriera el array donde se de la secuencia de los colores <span>this.secuencia[i]</span> y pasarlo como paramentro dentro de los switch y asi determinar cual color se iluminaria</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col mb-4">
+          <div class="info card bg-dark">
+            <img src="./assets/img/sweetAlert.png" class="card-img-top" alt="switch">
+            <div class="card-body">
+              <h5 class="card-title">Alertas con <span>sweetAlert</span></h5>
+              <p class="card-text">En este proyecto aprendi a utilizar esta excelente herraminete que te permite tener una mejor interfaz grafica y mejor experiencia de Usuario</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Main -->
+
+<!-- Footer -->
+    <footer class="footer pt-5">
+      <div class="container">
+
+        <div class="row">
+        <div class="footer-info col-lg-7">
+          <h5>Repositorio del proyecto</h5>
+          <p>Una practica que te ayudara a mejor tus habilidades en <span>Vanilla Javascript</span></p>
+        </div>
+        <div class="footer-info col-lg-5 d-flex justify-content-center">
+          <a href="#"><button type="button" class="btn btn-outline-secondary">Descargar repositorio</button></a>
+          <a href="#"><button type="button" class="btn btn-outline-secondary">Ver Repositorio</button></a>
+        </div>
+        </div>
+
+        <div class="row">
+        <div class="info col-lg-5">
+          <h1><img src="./assets/img/logo_dark.png"></h1>
+          <p>Mi nombre es David Duarte y soy un apasionado de las tecnologias frontend, long-life Learning estudiante de Platzi la plataforma web en donde estoy haciendo mi carrera como frontend-developer</p>
+          <ul>
+            <a href="#"><i>Github</i></a>
+            <a href="#"><i>LinkedIn</i></a>
+            <a href="#"><i>Facebook</i></a>
+          </ul>
+        </div>
+        <div class="col-lg-2 offset-lg-1 d-flex flex-column justify-content-center">
+          <h5>Account</h5>
+          <ul class="lista">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Billing</a></li>
+            <li><a href="#">Notificacion</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 d-flex flex-column justify-content-center">
+          <h5>Account</h5>
+          <ul class="lista">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Billing</a></li>
+            <li><a href="#">Notificacion</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 d-flex flex-column justify-content-center">
+          <h5>Account</h5>
+          <ul class="lista">
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Billing</a></li>
+            <li><a href="#">Notificacion</a></li>
+          </ul>
+        </div>
+        </div>
+
+        <div class="row mt-5 pb-4">
+
+    <div class="mb-2 col-12 col-lg-3 my-6">
+          <a href="#">Preguntas frecuentes</a>
+      </div>
+    <div class="mb-2 col-12 col-lg">
+        <a href="#">Contactos</a>
+    </div>
+    <div class="mb-2 col-12 col-lg">
+      <a href="#">Prensa</a>
+    </div>
+    <div class="mb-2 col-12 col-lg-3">
+    <a href="#">Terminos y condiciones</a>
+     </div>
+    <div class="mb-2 col-12 col-lg">
+  <a href="#">Privacidad</a>
+    </div>
+    <div class="mb-2 col-12 col-lg">
+<a href="#">Estudiantes</a>
+    </div>
+        </div>
+
+        <div class="row"><div class=" info col-12 d-flex justify-content-center">Made with 💖 by D4v1d_Du4rt3</div> </div>
+
+      </div>
+    </footer>
+<!-- /Footer -->
+<!-- scripts -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
