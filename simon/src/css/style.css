@@ -7,6 +7,10 @@
 body {
   position: relative;
 }
+.card-header,
+.card {
+  border: none;
+}
 .circulo-container {
     margin:0;
     display: flex;
