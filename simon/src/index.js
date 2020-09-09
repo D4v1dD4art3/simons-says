@@ -1,10 +1,25 @@
+
 const violeta = document.getElementById('violeta');
 const celeste = document.getElementById('celeste');
 const verde = document.getElementById('verde');
 const naranja = document.getElementById('naranja');
 const btnEmpezar = document.getElementById('btnEmpezar');
 const navbarLinks = document.querySelectorAll(".navbar a");
+const btnSwitch = document.getElementById("switch");
+const navbarToggler = document.querySelector(".navbar-collapse");
+const $header = document.getElementById('header');
+const $main = document.getElementById('main');
+const $main2 = document.getElementById('main2');
+const $banner = document.getElementById('banner');
+const $footer = document.getElementById('footer');
+const $pic = document.getElementById('pic');
+console.log($pic.hasAttribute('src'));
+console.log($pic.getAttribute('src'));
+// const navbarMenu = document.querySelector(".navbar ul");
+// const anime = require('animejs');
 const ULTIMO_NIVEL = 10;
+
+
 
 class Juego {
     constructor(){
@@ -125,6 +140,12 @@ function empezarJuego() {
 }
 
 // smoothScroll
+navbarToggler.addEventListener("click", navbarTogglerClick);
+
+function navbarTogglerClick() {   
+  navbarToggler.classList.toggle("show");
+//   navbarToggler.animate(keyframes = [], options = {})
+}
 
 for(let i=0; i < navbarLinks.length; i++) {
     navbarLinks[i].addEventListener("click", navbarLinkClick);
@@ -161,23 +182,21 @@ for(let i=0; i < navbarLinks.length; i++) {
 function smoothScroll(event) {
     event.preventDefault();
     const targetId = event.currentTarget.getAttribute("href")==="#" ? "header" : event.currentTarget.getAttribute("href");
-    const altoDelHeader = 110;
+    const altoDelHeader = 160;
     const targetPosition = document.querySelector(targetId).offsetTop - altoDelHeader;
     const startPosition = window.pageYOffset;
     const distance = targetPosition - startPosition;
     const duration = 1500;
     let start = null;
-    console.log(startPosition);
     window.requestAnimationFrame(step);
   
     function step(timestamp) {
-        console.log(timestamp)
       if (!start) start = timestamp;
 
       const progress = timestamp - start;
       //  aqui van las animaciones 
       // window.scrollTo(0, distance*(progress/duration) + startPosition);
-      window.scrollTo(0, easeInOutQuad(progress, startPosition, distance, duration) - 1);
+      window.scrollTo(0, easeInOutQuad(progress, startPosition, distance, duration) - altoDelHeader);
 
       if (progress < duration) window.requestAnimationFrame(step);
     }
@@ -202,3 +221,35 @@ function smoothScroll(event) {
       t -= 2;
       return c/2*(t*t*t + 2) + b;
   };
+
+    function CambiarFoto(url) {
+        const logo_dark = 'https://i.imgur.com/LCbas6R.png' ;
+        const logo_white = 'https://i.imgur.com/hRccxk7.png';
+        if (url.src === logo_dark) {
+            url.src = logo_white;
+        }else if(url.src === logo_white) {
+         url.src = logo_dark;
+        }
+    }
+    // function CambiarFoto(url) {
+    //     if (url.hasAttribute('src')) {
+    //      url.setAttribute('src', 'https://i.imgur.com/hRccxk7.png')
+    //     }else if(url.getAttribute('src') === 'https://i.imgur.com/hRccxk7.png') {
+    //      url.setAttribute('src', 'https://i.imgur.com/LCbas6R.png')
+    //     }
+    // }
+    //   switch bottom
+    function cambiarState(btn) {
+        btn.addEventListener('click', () =>{
+        document.body.classList.toggle('bg-dark');
+        CambiarFoto($pic)
+        $header.classList.toggle('light');
+        $main.classList.toggle('light');
+        $main2.classList.toggle('light');
+        $banner.classList.toggle('light');
+        $footer.classList.toggle('light');
+        btnSwitch.classList.toggle('active');
+    })
+}
+cambiarState(btnSwitch);
+

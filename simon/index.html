@@ -9,22 +9,22 @@
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/icon.css">
 </head>
-<body class="bg-dark " data-spy="scroll" data-target="#navbar" data-offset="120">
+<body class="bg-dark" data-spy="scroll" data-target="#navbarNav" data-offset="130">
     
   <!-- header -->
-  <header  class="header sticky-top">
-      <nav  id="navbar" class="mx-5 p-0 navbar navbar-expand-lg space-between navbar-dark ">
-          <a class="navbar-brand w-0" href="#main">
-              <img class=" m-0 w-50 h-20" src="./assets/img/logo_dark.png" alt="">
+  <header id="header" class="header sticky-top">
+       <nav class="mx-5 p-0 navbar navbar-expand-lg space-between navbar-dark "> 
+          <a class="navbar-brand" href="#main">
+              <img id="pic" class=" m-0 w-50 h-20" src="https://i.imgur.com/LCbas6R.png" alt="">
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
         
-          <div class="collapse navbar-collapse" id="navbar">
+          <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" target="_blank" href="#portafolio">Portfolio<span class="sr-only">(current)</span></a>
+              <li class="nav-item ">
+                <a class="nav-link" target="_blank" href="#portafolio">Portfolio</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#main">Simons-says</a>
@@ -36,11 +36,14 @@
                 <a class="nav-link" href="#footer">Footer</a>
               </li>
               <li class="nav-item">
-               <button>switch</button>
+               <button id="switch" class="switch">
+                 <span><i class="fas fa-sun"></i></span>
+                 <span><i class="fas fa-moon"></i></span>
+               </button>
               </li>
             </ul>
           </div>
-        </nav>
+      </nav> 
   </header>
   <!-- /header -->
 
@@ -60,7 +63,7 @@
           </section>
         </div>
 
-        <div class="info col-sm-12 col-lg-5 d-flex offset-lg-1 align-items-center mt-5">
+        <div id='main2' class="info col-sm-12 col-lg-5 d-flex offset-lg-1 align-items-center mt-5">
           <div class="card bg-dark m-0" style="max-width: 100%;">
             <div class="card-header">Simons-says</div>
             <div class="card-body">
@@ -137,65 +140,46 @@
         </div>
         </div>
 
-        <div class="row">
-        <div class="footer-info col-lg-5">
-          <h1><img src="./assets/img/logo_dark.png"></h1>
-          <p>Mi nombre es David Duarte y soy un apasionado de las tecnologias frontend, long-life Learning estudiante de Platzi la plataforma web en donde estoy haciendo mi carrera como frontend-developer</p>
-          <ul class="pl-0  d-flex flex-row-reverse">
-            <a class="facebook ml-2" target='_blank' href="https://www.facebook.com/david.duartejimenez.3"><i class="fab fa-facebook-f"></i></a>
-            <a class="linkedIn ml-2" target='_blank' href="https://www.linkedin.com/in/jesus-duarte-948a5b1aa/"><i class="fab fa-linkedin-in"></i></a>  
-            <a class="github ml-2" target='_blank' href="https://github.com/D4v1dD4art3"><i class="fab fa-github"></i></a>         
-            <a class="platzi ml-2" target='_blank' href="https://platzi.com/@david-duarte590/"><img src="https://static.platzi.com/mf-landings/image/isotipoPlatzi-442ccc1186a9806e18c9889cc301ffe1.png" alt=""></a>         
-           </ul>
+        <div class="row ">
+          <div class="footer-info col-lg-5">
+            <h1><img src="./assets/img/logo_dark.png"></h1>
+            <p>Mi nombre es David Duarte y soy un apasionado de las tecnologias frontend, long-life Learning estudiante de Platzi la plataforma web en donde estoy haciendo mi carrera como frontend-developer</p>
+            <ul class="pl-0  d-flex flex-row-reverse">
+              <a class="facebook ml-2" target='_blank' href="https://www.facebook.com/david.duartejimenez.3"><i class="fab fa-facebook-f"></i></a>
+              <a class="linkedIn ml-2" target='_blank' href="https://www.linkedin.com/in/jesus-duarte-948a5b1aa/"><i class="fab fa-linkedin-in"></i></a>  
+              <a class="github ml-2" target='_blank' href="https://github.com/D4v1dD4art3"><i class="fab fa-github"></i></a>         
+              <a class="platzi ml-2" target='_blank' href="https://platzi.com/@david-duarte590/"><img src="https://static.platzi.com/mf-landings/image/isotipoPlatzi-442ccc1186a9806e18c9889cc301ffe1.png" alt=""></a>         
+             </ul>
+          </div>
+
+          <div class="col-lg-2 d-flex flex-column align-items-sm-center justify-content-center">
+            <h5>Account</h5>
+            <ul class="lista d-sm-flex flex-column align-items-sm-center">
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Billing</a></li>
+              <li><a href="#">Notificacion</a></li>
+            </ul>
+          </div>
         </div>
 
-        <div class="col-lg-2 offset-lg-1 d-flex flex-column justify-content-center">
-          <h5>Account</h5>
-          <ul class="lista">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Billing</a></li>
-            <li><a href="#">Notificacion</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 d-flex flex-column justify-content-center">
-          <h5>Account</h5>
-          <ul class="lista">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Billing</a></li>
-            <li><a href="#">Notificacion</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-2 d-flex flex-column justify-content-center">
-          <h5>Account</h5>
-          <ul class="lista">
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Billing</a></li>
-            <li><a href="#">Notificacion</a></li>
-          </ul>
-        </div>
-        </div>
-
-        <div class="row mt-5 pb-4">
-
-    <div class="mb-2 col-12 col-lg-3 my-6">
+  <div class="row mt-5 pb-4 d-flex justify-content-sm-center">
+    <div class="mb-2 col-12 col-lg-3 my-6 d-flex justify-content-sm-center">
           <a href="#">Preguntas frecuentes</a>
       </div>
-    <div class="mb-2 col-12 col-lg">
+    <div class="mb-2 col-12 col-lg d-flex justify-content-sm-center">
         <a href="#">Contactos</a>
     </div>
-    <div class="mb-2 col-12 col-lg">
+    <div class="mb-2 col-12 col-lg d-flex justify-content-sm-center">
       <a href="#">Prensa</a>
     </div>
-    <div class="mb-2 col-12 col-lg-3">
+    <div class="mb-2 col-12 col-lg-3 d-flex justify-content-sm-center">
     <a href="#">Terminos y condiciones</a>
      </div>
-    <div class="mb-2 col-12 col-lg">
+    <div class="mb-2 col-12 col-lg d-flex justify-content-sm-center">
   <a href="#">Privacidad</a>
     </div>
-    <div class="mb-2 col-12 col-lg">
+    <div class="mb-2 col-12 col-lg d-flex justify-content-sm-center">
 <a href="#">Estudiantes</a>
     </div>
         </div>

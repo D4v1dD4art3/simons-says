@@ -20,8 +20,18 @@ body {
 .main-info h1{
   color: rgb(21, 158, 182);
 }
+.light.main-info h1{
+  color: rgb(20, 20, 20);
+}
 .header {
   background: rgb(37, 54, 73);
+}
+
+.header.light {
+  background: rgb(35, 115, 206);
+}
+.header.light ul li {
+  color: black;
 }
 .circulo {
     width: 330px;
@@ -82,6 +92,13 @@ body {
   .hide {
       display: none;
   }
+  .info.light div{
+    background: rgb(35, 115, 206);
+    color :rgb(18, 24, 26);
+  }
+  .info.light{
+    border: 1px solid rgb(22, 22, 21);
+  }
   .info{
     color :rgb(21, 158, 182);
     border: 1px solid rgb(255, 153, 0);
@@ -94,6 +111,11 @@ body {
   .info span{
     color: rgb(255, 153, 0);
   }
+  .footer-info.light span,
+  .info.light span{
+    color: rgb(238, 233, 232);
+  }
+
   .footer-info {
     color :rgb(21, 158, 182);
   }
@@ -117,10 +139,7 @@ body {
   .footer h5{
     color: rgb(177, 20, 177);
   }
-
-  @keyframes mover{
-    0%{
-      transform: translate(100%);
-    }
+  .duration {
+    transition: .5s;
   }
   
