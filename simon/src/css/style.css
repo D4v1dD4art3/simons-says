@@ -139,7 +139,20 @@ body {
   .footer h5{
     color: rgb(177, 20, 177);
   }
-  .duration {
-    transition: .5s;
+  .dashboard {
+    width: 150px;
+    height: 100px;
+    font-family: 'Grandstander', cursive;
+    background-color: rgba(66, 138, 233, 0.3);
+    font-size: 15px;
+    /* margin-bottom: 30px; */
+    border: 1px solid white;
+    border-radius: 20px;
+    /* padding: 2vw 1vw; */
+    position: relative;
   }
   
+  .dashboard li {
+    color: white !important;
+    list-style: none;
+}

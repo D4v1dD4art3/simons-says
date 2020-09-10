@@ -13,6 +13,9 @@ const $main2 = document.getElementById('main2');
 const $banner = document.getElementById('banner');
 const $footer = document.getElementById('footer');
 const $pic = document.getElementById('pic');
+const nombre = document.getElementById("name");
+const nivel = document.getElementById("level");
+const tiempo = document.getElementById("time");
 console.log($pic.hasAttribute('src'));
 console.log($pic.getAttribute('src'));
 // const navbarMenu = document.querySelector(".navbar ul");
@@ -33,6 +36,7 @@ class Juego {
         this.siguienteNivel = this.siguienteNivel.bind(this)
         this.toggleBtnEmpezar()
         this.nivel = 1
+        this.datos();
         this.colores = {
             celeste,
             violeta,
@@ -40,6 +44,44 @@ class Juego {
             verde
         }
       }
+      datos() {
+        Swal.fire({
+            icon: 'question',
+            title: '¡Simon Dice!', 
+            text: 'Ingresa Tu Nombre:',
+            input: 'text',
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+              },
+              hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+              } 
+          })
+        .then((result) => {
+        if (result.value) {
+            nombre.innerHTML = JSON.stringify(result.value);
+        } else {
+            nombre.innerHTML = "Anónimo";
+        }
+        nivel.innerHTML = this.nivel = 1;
+        tiempo.innerHTML = this.counter = 15;
+        this.generarSEcuencia();
+        setTimeout(this.siguienteNivel, 500);
+        this.temporizador();
+        });
+      }
+    temporizador() {
+        this.timer = setInterval(() => {
+          this.counter--;
+          if (this.counter < 0) {
+            clearInterval(this.timer);
+            this.perdioElJuego();
+          } else {
+            tiempo.innerText = this.counter;
+          }
+        }, 1000);
+    }
+      
     toggleBtnEmpezar() {
         btnEmpezar.classList.toggle('hide');
     }
@@ -103,12 +145,28 @@ class Juego {
                 this.nivel++
                 this.eliminarEventosClick()
                 if(this.nivel === (ULTIMO_NIVEL +1)) {
+                    clearInterval(this.timer);
                     this.ganoElJuego()
                     } else {
-                        setTimeout(this.siguienteNivel, 1500)
+                        clearInterval(this.timer);
+                        // setTimeout(this.siguienteNivel, 1500)
+                        Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: `Muy bien!, nivel: ${this.nivel}!`,
+                            showConfirmButton: false,
+                            timer: 1000
+                          })
+                        .then(() => {
+                            nivel.innerHTML = this.nivel
+                            tiempo.innerHTML = this.counter = 15;
+                            this.temporizador();
+                            setTimeout(this.siguienteNivel(), 1500);
+                          })
                 }
             }
         } else {
+            clearInterval(this.timer);
             this.perdioElJuego()
         }
     }
@@ -119,7 +177,13 @@ class Juego {
             icon: "success",
             button: "Ve por mas!",
           })
-          .then(this.inicializar)
+          .then(() => {
+            this.eliminarEventosClick();
+            nombre.innerHTML = "Anónimo";
+            nivel.innerHTML = "--";
+            tiempo.innerHTML = "--";
+            this.toggleBtnEmpezar();
+          });
     }
     perdioElJuego() {
         swal({
@@ -129,9 +193,12 @@ class Juego {
             button: "Volver a intentar!",
           })
           .then(() => {
-              this.eliminarEventosClick()
-              this.inicializar()
-          })
+            this.eliminarEventosClick();
+            nombre.innerHTML = "Anónimo";
+            nivel.innerHTML = "--";
+            tiempo.innerHTML = "--";
+            this.toggleBtnEmpezar();
+        });
     }
 }
 
