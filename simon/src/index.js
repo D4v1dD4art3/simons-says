@@ -61,15 +61,15 @@ class Juego {
         if (result.value) {
             nombre.innerHTML = JSON.stringify(result.value);
         } else {
-            nombre.innerHTML = "Anónimo";
+            nombre.innerHTML = `Anónimo`;
         }
         nivel.innerHTML = this.nivel = 1;
         tiempo.innerHTML = this.counter = 15;
         this.generarSEcuencia();
         setTimeout(this.siguienteNivel, 500);
         this.temporizador();
-        });
-      }
+    });
+}
     temporizador() {
         this.timer = setInterval(() => {
           this.counter--;
@@ -153,13 +153,13 @@ class Juego {
                         Swal.fire({
                             position: 'center',
                             icon: 'success',
-                            title: `Muy bien!, nivel: ${this.nivel}!`,
+                            title: `Muy bien!, ${nombre.innerHTML} nivel: ${this.nivel}!`,
                             showConfirmButton: false,
                             timer: 1000
                           })
                         .then(() => {
                             nivel.innerHTML = this.nivel
-                            tiempo.innerHTML = this.counter = 15;
+                            tiempo.innerHTML = this.counter = 15 - 1;
                             this.temporizador();
                             setTimeout(this.siguienteNivel(), 1500);
                           })

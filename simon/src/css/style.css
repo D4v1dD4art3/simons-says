@@ -156,3 +156,65 @@ body {
     color: white !important;
     list-style: none;
 }
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration:3s;
+  animation-fill-mode: both;
+}
+@keyframes fadeIn {
+  from{
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.fadeInSide {
+  animation-name: fadeInSide;
+  animation-duration:1.5s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(.83,-0.44,.47,1.43);
+}
+@keyframes fadeInSide {
+  from{
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.fadeInDown {
+  animation-name: fadeInDown;
+  animation-duration:1.5s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(.83,-0.44,.47,1.43);
+}
+@keyframes fadeInDown {
+  from{
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.fadeInUp {
+  animation-name: fadeInUp;
+  animation-duration:1.5s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(.83,-0.44,.47,1.43);
+}
+@keyframes fadeInUp {
+  from{
+    opacity: 0;
+    transform: translate3d(0, 120%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
