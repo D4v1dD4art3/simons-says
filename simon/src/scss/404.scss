@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(19, 22, 62)!important;
+    // perspective: 100px;
+    // perspective-origin: top;
+}
+.container-img {
+    height: 100vh;
+    width: 100vw;
+    background-image: url('../../assets/img/rocket.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    // overflow: hidden;
+    // position: absolute;
+    & p.size {
+        font-size:30px !important;
+    }
+    & span {
+        color: white;
+    }
+}
+.container-astro {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.img-astro {
+    // border:1px solid red;
+    width: 400px;
+    height: 400px;
+    perspective: 400px;
+    perspective-origin:bottom;
+    // transition:1.5s 0 ease;
+    // transition-duration: 1.5s;
+    // transition-timing-function: ease-in;
+    .foto {
+        // border:1px solid green;
+        width: 50px;
+        // transition-timing-function: ease-in;
+        // transition: 5s ease-in;
+        // transform: rotate3d(0, 0, 0, -45deg) ;
+        // transform: rotate3d(x, y, z, grados);
+        // transform: rotate(360deg)  rotate3d(0,0,1, -45deg);
+        transform-origin: center;
+        animation-name: astronauta,mov;
+        animation-duration: 50s, 50s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear, linear;
+        animation-direction: alternate;
+        position: relative;
+        @keyframes astronauta {
+            0%{
+                transform: rotate(0deg) translate(0);
+            }
+            25% {
+                transform: rotate(90deg) scale(1.5) translateX(10px);
+            }
+            50% {
+                transform: rotate(180deg) translateX(10px) translateY(20px);
+            }
+            75% {
+                transform: rotate(270deg) scale(2) translateX(10px);
+            }
+            100% {
+                transform: rotate(360deg) scale(1.5) translateY(100px);
+            }
+        }
+        @keyframes mov {
+            0% {
+                left: 0;
+                right:0;
+                top: 0;
+                bottom: 0;
+            }
+            25% {
+                left: 600px;
+                right:0;
+                top:-200px;
+                bottom:0;
+            }
+            50% {
+                left: 600px;
+                right:300px;
+                top: 500px;
+                bottom:0px;
+            }
+            75% {
+                left: 0px;
+                right:800px;
+                top: 100px;
+                bottom: 0;
+            }
+            100% {
+                left: 600px;
+                top: 0px;
+                right:0px;
+                bottom:400px;
+            }
+            
+        }
+    }
+    &:hover {
+        .foto {
+            // transform: translate(10px,10px,0);
+            animation-play-state: paused;
+            // animation-name: hover;
+            // @keyframes hover {
+            //     0%{
+            //         transform:  scale(1.5);
+            //     }
+            //     100% {
+            //         transform: scale(2);
+            //     }
+            // }
+        }
+    }     
+}

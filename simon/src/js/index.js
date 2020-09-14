@@ -16,10 +16,6 @@ const $pic = document.getElementById('pic');
 const nombre = document.getElementById("name");
 const nivel = document.getElementById("level");
 const tiempo = document.getElementById("time");
-console.log($pic.hasAttribute('src'));
-console.log($pic.getAttribute('src'));
-// const navbarMenu = document.querySelector(".navbar ul");
-// const anime = require('animejs');
 const ULTIMO_NIVEL = 10;
 
 
