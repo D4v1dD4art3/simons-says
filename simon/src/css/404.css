@@ -39,29 +39,38 @@ body {
 }
 .img-astro .foto {
   width: 50px;
+  transition: 1s;
   transform-origin: center;
   animation-name: astronauta, mov;
-  animation-duration: 50s, 50s;
+  animation-duration: 50s;
   animation-iteration-count: infinite;
-  animation-timing-function: linear, linear;
+  animation-timing-function: linear, linear, ease-in;
   animation-direction: alternate;
   position: relative;
 }
+@keyframes hover {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(2);
+  }
+}
 @keyframes astronauta {
   0% {
-    transform: rotate(0deg) translate(0);
+    transform: rotate(0deg);
   }
   25% {
-    transform: rotate(90deg) scale(1.5) translateX(10px);
+    transform: rotate(90deg);
   }
   50% {
-    transform: rotate(180deg) translateX(10px) translateY(20px);
+    transform: rotate(180deg);
   }
   75% {
-    transform: rotate(270deg) scale(2) translateX(10px);
+    transform: rotate(270deg);
   }
   100% {
-    transform: rotate(360deg) scale(1.5) translateY(100px);
+    transform: rotate(360deg);
   }
 }
 @keyframes mov {
@@ -72,20 +81,20 @@ body {
     bottom: 0;
   }
   25% {
-    left: 600px;
+    left: 300px;
     right: 0;
     top: -200px;
     bottom: 0;
   }
   50% {
-    left: 600px;
+    left: 300px;
     right: 300px;
     top: 500px;
     bottom: 0px;
   }
   75% {
     left: 0px;
-    right: 800px;
+    right: 300px;
     top: 100px;
     bottom: 0;
   }
@@ -96,6 +105,7 @@ body {
     bottom: 400px;
   }
 }
-.img-astro:hover .foto {
-  animation-play-state: paused;
+.img-astro .foto:hover {
+  transition: 1s;
+  width: 150px;
 }
